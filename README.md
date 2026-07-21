@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nevic Labs — React (Vite) site
 
 A faithful React port of the Nevic Labs static HTML marketing site. Same content, copy, styling, SEO metadata, and behaviour — rebuilt as a routed single-page app with reusable components.
@@ -70,3 +71,7 @@ This rewrites `src/pages/_content/*.html` and `src/data/pageMeta.js` — rewriti
 - **Footer.** The source site had slightly different footers per page; this port uses the `index.html` footer as the single canonical `Footer`.
 - **Scroll-reveal.** The original `IntersectionObserver` reveal was intentionally not reimplemented; the source CSS has no rules that hide `.reveal` content, so everything is visible by default.
 - **Contact form.** The JotForm iframe is preserved; its auto-resize handler is re-injected in `Contact.jsx` (inline scripts don't run inside injected HTML).
+=======
+# Nevic-Labs-Repo
+React application for Nevic Labs
+>>>>>>> 23285a58011f9ba67811e5b6e6660ee673811655
