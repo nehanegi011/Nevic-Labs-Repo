@@ -8,6 +8,13 @@ export default function Footer() {
       <div className="wrap">
         <div className="fgrid">
           <div>
+            <Link to="/" className="brand" aria-label="Nevic Labs home" onClick={close}>
+              <span className="brand-logo-full">
+                <img src="/assets/img/Neviclabs-logo.png" alt="Nevic Labs" />
+              </span>
+            </Link>
+          </div>
+          <div>
             <h5>Product</h5>
             <p><Link to="/products/connect">Nevic Connect</Link></p>
             <p><Link to="/products/pulse">Nevic Pulse</Link></p>
@@ -17,11 +24,12 @@ export default function Footer() {
             <h5>Company</h5>
             <p><Link to="/about">About Us</Link></p>
             <p><Link to="/careers">Careers</Link></p>
+            <p><Link to="/faq">FAQ</Link></p>
           </div>
           <div>
             <h5>Legal</h5>
             <p><Link to="/privacy">Privacy Policy</Link></p>
-            <p><Link to="/terms">Terms of Service</Link></p>
+            <p><Link to="/privacy">Terms of Service</Link></p>
           </div>
           <div>
             <h5>Contact</h5>
