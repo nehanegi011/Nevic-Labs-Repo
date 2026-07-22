@@ -94,6 +94,22 @@ export default function ContactForm() {
 
       if (insertError) throw insertError;
 
+      const { error: emailError } =
+  await supabase.functions.invoke(
+    "send-contact-email",
+    {
+      body: {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        message: values.message,
+        attachmentUrl,
+      },
+    }
+  );
+
+if (emailError) throw emailError;
+
       setStatus('success');
       setValues(initialState);
       setFile(null);
