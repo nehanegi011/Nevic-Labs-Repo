@@ -123,7 +123,7 @@ if (emailError) throw emailError;
   if (status === 'success') {
     return (
       <div className="ok" style={{ display: 'block' }}>
-        Thanks — we've got your details. Someone from Nevic Labs will reach out within one working day to set up your walkthrough.
+        Thank you for contacting Nevic Labs. We've received your details. Our team will reach out to you.
       </div>
     );
   }
