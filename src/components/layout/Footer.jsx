@@ -6,7 +6,6 @@ export default function Footer() {
   return (
     <footer>
       <div className="wrap">
-        <div className="fgrid">
           <div>
             <Link to="/" className="brand" aria-label="Nevic Labs home" onClick={close}>
               <span className="brand-logo-full">
@@ -14,6 +13,7 @@ export default function Footer() {
               </span>
             </Link>
           </div>
+        <div className="fgrid">
           <div>
             <h5>Product</h5>
             <p><Link to="/products/connect">Nevic Connect</Link></p>

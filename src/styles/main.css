@@ -296,18 +296,96 @@ header.nav.nav-scrolled{
 .related{background:var(--paper-2);border-top:1px solid var(--line);padding:70px 0}
 
 /* Team */
+/* Team */
 .team{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.fcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow-sm)}
-.fcard .top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.mono-ava{width:64px;height:64px;border-radius:16px;background:var(--navy);color:#ff6700;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-size:24px;font-weight:700;flex:none}
-.fcard h3{font-size:22px}
-.fcard .role{font-family:'Montserrat';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin-top:4px}
-.fcard ul{list-style:none;display:grid;gap:11px}
-.fcard li{font-size:14.5px;padding-left:20px;position:relative}
-.fcard li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:#ff6700}
-.fcard li b{color:var(--ink);font-weight:600}
-.fcard li a{color:var(--accent-2);font-weight:600;text-decoration:none}
-.fcard li a:hover{text-decoration:underline}
+
+.fcard{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:36px 30px 26px;
+  box-shadow:var(--shadow-sm);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.fcard .favatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  background:var(--paper-2);
+  margin-bottom:18px;
+  box-shadow:0 8px 20px -8px rgba(15,42,82,.18);
+}
+
+.fcard h3{font-size:20px;margin-bottom:6px}
+
+.fcard .fmeta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:40%;
+  padding-top:18px;
+}
+@media (max-width:1300px){
+.fcard .fmeta{width: 60%;}
+}
+@media (max-width:960px){
+.fcard .fmeta{width: 30%;}
+}
+@media (max-width:800px){
+.fcard .fmeta{width: 50%;}
+}
+@media (max-width:600px){
+.fcard .fmeta{width: 80%;}
+}
+@media (max-width:400px){
+.fcard .fmeta{width: 100%;}
+}
+
+.fcard .fedu{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink-2);
+}
+
+.fcard .fedu-icon{
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  background:rgba(15,42,82,.08);
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+}
+.fcard .fedu-icon svg{width:18px;height:18px}
+
+.fcard .flinkedin{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  border-radius:4px;
+  background:#0A66C2;
+  color:#fff;
+  flex:none;
+  transition:transform .15s, box-shadow .15s;
+}
+.fcard .flinkedin:hover{transform:translateY(-2px);box-shadow:0 6px 14px -4px rgba(10,102,194,.5)}
+.fcard .flinkedin svg{width:16px;height:16px}
+
+@media (max-width:960px){
+  .team{grid-template-columns:1fr}
+}
 
 /* Careers */
 .roles{display:grid;gap:15px}
@@ -394,7 +472,7 @@ textarea{resize:vertical;min-height:100px}
 /* Footer */
 /* Footer */
 footer{background:var(--navy-deep);color:#8FA0BF;padding:64px 0 28px}
-.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:30px;margin-bottom:40px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:30px;margin:40px 0}
 footer h5{font-family:'JetBrains Mono',monospace;color:#fff;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:15px;font-weight:500}
 footer a{display:block;color:#8FA0BF;font-size:14px;margin-bottom:9px}
 footer a:hover{color:#ff6700}
@@ -481,7 +559,7 @@ footer a:hover{color:#ff6700}
   .sol-grid,.blog-grid{grid-template-columns:1fr 1fr}
   .team{grid-template-columns:1fr}
   .vals{grid-template-columns:1fr 1fr}
-  .fgrid{grid-template-columns:1fr 1fr 1fr}
+  .fgrid{grid-template-columns:repeat(4, 1fr)}
   .fbrand{grid-column:1/-1}
   .nav-links{display:none;position:absolute;left:0;right:0;flex-direction:column;background:#000;border-bottom:1px solid var(--line);padding:8px 26px 18px;gap:0; height: 100vh; top: 0;}
   .nav-links.open{display:flex; background: #111b31;padding-top: 50px}
