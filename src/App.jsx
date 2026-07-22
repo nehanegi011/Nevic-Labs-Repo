@@ -21,6 +21,7 @@ import Terms from './pages/Terms.jsx';
 import Blog from './pages/Blog.jsx';
 import BlogPost from './pages/BlogPost.jsx';
 import NotFound from './pages/NotFound.jsx';
+import AdminSubmissions from './pages/AdminSubmissions.jsx'
 
 export default function App() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/admin/submissions" element={<AdminSubmissions />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

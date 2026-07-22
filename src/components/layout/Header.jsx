@@ -1,20 +1,40 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 // Dropdowns are pure-CSS (hover / :focus-within) as in the source main.css.
-// Only the mobile burger toggle + body scroll-lock need JS.
+// Only the mobile burger toggle + body scroll-lock + scroll-based background
+// need JS.
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     document.body.classList.toggle('menu-open', open);
     return () => document.body.classList.remove('menu-open');
   }, [open]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll(); // set correct state immediately (e.g. after navigating with scroll restored)
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const close = () => setOpen(false);
 
+  const isBlogPage = location.pathname.startsWith('/blog/');
+  const isAdminPage = location.pathname.startsWith('/admin/submissions');
+
+  const headerClass = [
+    'nav',
+    isBlogPage ? 'nav-blog' : '',
+    isAdminPage ? 'nav-blog' : '',
+    scrolled ? 'nav-scrolled' : '',
+  ].filter(Boolean).join(' ');
+
   return (
-    <header className="nav">
+    <header className={headerClass}>
       <div className="wrap nav-in">
         <Link to="/" className="brand" aria-label="Nevic Labs home" onClick={close}>
           <span className="brand-logo-full">
