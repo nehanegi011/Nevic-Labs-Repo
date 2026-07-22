@@ -21,8 +21,14 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const close = () => setOpen(false);
+const close = () => {
+  setOpen(false);
 
+  // Remove focus from the clicked menu item
+  if (document.activeElement instanceof HTMLElement) {
+    document.activeElement.blur();
+  }
+};
   const isBlogPage = location.pathname.startsWith('/blog/');
   const isAdminPage = location.pathname.startsWith('/admin/submissions');
 
@@ -71,8 +77,13 @@ export default function Header() {
             </div>
           </div>
 
-          <NavLink to="/blog" onClick={close}>Blog</NavLink>
-          <NavLink to="/about" onClick={close}>About Us</NavLink>
+          <div className = {`menu-last`}>
+            <NavLink to="/blog" onClick={close}>Blog</NavLink>
+          </div>
+
+          <div className = {`menu-last`}>
+            <NavLink to="/about" onClick={close}>About Us</NavLink>
+          </div>
         </nav>
 
         <button
