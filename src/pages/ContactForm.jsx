@@ -54,7 +54,7 @@ export default function ContactForm() {
     if (!values.email.trim()) next.email = 'Please enter your email.';
     else if (!isValidEmail(values.email)) next.email = 'Please enter a valid email address.';
     if (!values.phone.trim()) next.phone = 'Please enter a phone number.';
-    if (!values.consent) next.consent = 'Please accept the consent statement to continue.';
+    if (!values.consent) next.consent = 'Please provide your consent to continue.';
     setErrors((prev) => ({ ...prev, ...next }));
     return Object.keys(next).length === 0;
   };
@@ -183,7 +183,7 @@ if (emailError) throw emailError;
           style={{ width: 16, height: 16, marginTop: 2, flex: 'none' }}
         />
         <span>
-          I agree to be contacted by Nevic Labs about this enquiry, in line with the{' '}
+          I consent to Nevic Labs contacting me regarding my enquiry, in accordance with the {' '}
           <a href="/privacy">Privacy Policy</a>.
         </span>
       </label>
