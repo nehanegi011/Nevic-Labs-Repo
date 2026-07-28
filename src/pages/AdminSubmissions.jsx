@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from './supabaseClient';
+import Seo from '../components/layout/Seo.jsx';
 
 export default function AdminSubmissions() {
   const [session, setSession] = useState(undefined); // undefined = still checking, null = signed out
@@ -59,14 +60,21 @@ export default function AdminSubmissions() {
 
   // Still checking for an existing session on first load
   if (session === undefined) {
-    return <div className="wrap section">Loading…</div>;
+    return (
+      <>
+        <Seo title="Admin · Nevic Labs" noindex />
+        <div className="wrap section">Loading…</div>
+      </>
+    );
   }
 
   // Not logged in — show login form
   if (!session) {
     return (
-      <div className="wrap section" style={{ maxWidth: 420 }}>
-        <h2 style={{ marginBottom: 24 }}>Admin sign in</h2>
+      <>
+        <Seo title="Admin sign in · Nevic Labs" noindex />
+        <div className="wrap section" style={{ maxWidth: 420 }}>
+        <h1 style={{ marginBottom: 24 }}>Admin sign in</h1>
         <form onSubmit={handleLogin} style={{ display: 'grid', gap: 14 }}>
           <div>
             <label htmlFor="admin-email">Email</label>
@@ -82,12 +90,15 @@ export default function AdminSubmissions() {
           </button>
         </form>
       </div>
+      </>
     );
   }
 
   // Logged in — show submissions
   return (
-    <div className="wrap section">
+    <>
+      <Seo title="Submissions · Admin · Nevic Labs" noindex />
+      <div className="wrap section">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 30 }}>
         <h2>Submissions</h2>
         <button className="btn btn-ghost" onClick={handleLogout}>Sign out</button>
@@ -141,5 +152,6 @@ export default function AdminSubmissions() {
         </div>
       )}
     </div>
+    </>
   );
 }

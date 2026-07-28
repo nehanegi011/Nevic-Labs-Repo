@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/layout/Seo.jsx';
 
 export default function NotFound() {
   return (
     <>
-      <Helmet><title>Page not found · Nevic Labs</title></Helmet>
+      <Seo title="Page not found · Nevic Labs" noindex />
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow" style={{ fontSize: '20px' }}>404</span>

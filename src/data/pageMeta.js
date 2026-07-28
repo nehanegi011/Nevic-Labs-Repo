@@ -3,7 +3,10 @@ export const pageMeta = {
   "/": {
     "title": "Software for Indian healthcare providers · Nevic Labs",
     "description": "Nevic Labs builds patient engagement + healthcare provider operations software for healthcare providers of every size across India.",
-    "comp": "Home"
+    "comp": "Home",
+    "ogTitle": "Software for healthcare providers | Nevic Labs",
+    "ogDescription": "The whole patient journey, one connected platform.",
+    "image": "https://www.neviclabs.com/assets/img/neviclabs.png"
   },
   "/solutions": {
     "title": "Solutions · Nevic Labs",
@@ -38,22 +41,26 @@ export const pageMeta = {
   "/products/pulse": {
     "title": "Nevic Pulse · OPD Management · Nevic Labs",
     "description": "Nevic Pulse - the reception and admin control centre for the whole OPD day.",
-    "comp": "ProductPulse"
+    "comp": "ProductPulse",
+    "ogTitle": "Nevic Pulse - Smart OPD management Software"
   },
   "/products/connect": {
     "title": "Nevic Connect · Patient Engagement · Nevic Labs",
     "description": "Nevic Connect - booking, reminders, follow-ups and feedback inside WhatsApp.",
-    "comp": "ProductConnect"
+    "comp": "ProductConnect",
+    "ogTitle": "Nevic Connect – Talks to your patients where they exist - Whatsapp"
   },
   "/products/reach": {
     "title": "Nevic Reach · Digital Marketing · Nevic Labs",
     "description": "Nevic Reach - websites, Google Business Profile, social media and personalized agentic AI marketing for Indian healthcare providers.",
-    "comp": "ProductReach"
+    "comp": "ProductReach",
+    "ogTitle": "Digital marketing that brings more patients through your doors."
   },
   "/about": {
     "title": "About Us · Nevic Labs",
     "description": "About Nevic Labs - two technical founders building the healthcare OS for Indian healthcare providers, and the mission behind it.",
-    "comp": "About"
+    "comp": "About",
+    "ogTitle": "About Nevic Labs – Building Digital Healthcare Solutions"
   },
   "/careers": {
     "title": "Careers · Nevic Labs",
@@ -63,7 +70,8 @@ export const pageMeta = {
   "/contact": {
     "title": "Contact · Nevic Labs",
     "description": "Book a demo or get in touch with the Nevic Labs team.",
-    "comp": "Contact"
+    "comp": "Contact",
+    "ogTitle": "Contact Nevic Labs | Book a Demo"
   },
   "/faq": {
     "title": "FAQ · Nevic Labs",
